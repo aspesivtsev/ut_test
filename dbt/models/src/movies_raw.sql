@@ -1,4 +1,4 @@
--- models/movies_extracted.sql
+-- models/movies_raw.sql
 
 {{
   config(
