@@ -1,0 +1,3 @@
+pandas
+dbt-core
+dbt-postgres

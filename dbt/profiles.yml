@@ -1,0 +1,14 @@
+ut_dwh:
+  target: dwh  # default target environment
+  outputs:
+    dwh:
+      type: postgres
+      host: "{{ env_var('POSTGRES_DB_SERVER') }}"  
+      port: 5432       
+      user: "{{ env_var('POSTGRES_USER_DB') }}"    
+      password: "{{ env_var('POSTGRES_PASSWORD_DB') }}"  
+      dbname: "{{ env_var('POSTGRES_DB_DWH') }}" 
+      schema: dwh  # schema to build models into
+      threads: 4
+
+

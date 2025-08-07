@@ -1,0 +1,11 @@
+name: 'ut_dwh'
+profile: 'ut_dwh'
+
+models:
+  ut_dwh:
+    src:
+      +schema: src
+      +materialized: table  
+    ods:
+      +schema: ods
+      +materialized: table

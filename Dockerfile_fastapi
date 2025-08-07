@@ -1,0 +1,27 @@
+# Dockerfile
+
+# pull the official docker image
+FROM python:3.11.1-slim
+
+# set work directory
+#WORKDIR /code
+WORKDIR /app
+
+# set env variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# install dependencies
+#COPY ./requirements_fastapi.txt /code/requirements_fastapi.txt
+COPY requirements_fastapi.txt .
+
+RUN pip install --upgrade pip
+#RUN pip install --no-cache-dir --upgrade -r /code/requirements_fastapi.txt
+RUN pip install -r requirements_fastapi.txt
+
+
+# copy project
+#COPY ./app /code/app
+COPY . .
+
+#CMD ["fastapi", "run", "app/main.py", "--proxy-headers", "--port", "80", "--reload"]

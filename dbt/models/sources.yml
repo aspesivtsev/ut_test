@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: staging                     # имя источника (логическое)
+    database: dwh
+    schema: src                   # реальная схема в БД
+    tables:
+      - name: movies_raw_json_src  # таблица 
+        description: "Исходная таблица с фильмами в JSON"
+        
+  - name: prod                     # имя источника (логическое)
+    database: dwh
+    schema: ods                   # реальная схема в БД
+    tables:
+      - name: movies  # таблица 
+        description: "Таблица с фильмами"
